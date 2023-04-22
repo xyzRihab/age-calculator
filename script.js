@@ -55,7 +55,6 @@ function calculation() {
   
   if (Number(currentDay) == Number(dayInput.value)) _days = 0;
 
-
   if (Number(currentMonth) <= Number(monthInput.value)) {
     _years--;
     _months = 12 - Number(monthInput.value) + Number(currentMonth) - 1;
