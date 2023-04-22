@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="date-of-birth">
+        <form>
+          <div class="date">
+            <label for="day">DAY</label>
+            <input
+              id="day"
+              name="Day"
+              type="number"
+              placeholder="DD"
+              max="31"
+              min="1"
+              required
+            />
+            <span id="required-error1" class="error"
+              ><i>This field is required</i></span
+            >
+            <span id="day-error" class="valid-error"
+              ><i>Must be a valid day</i></span
+            >
+            <span class="days-error"><i>Must be a valid date</i></span>
+          </div>
+          <div class="date">
+            <label for="month">MONTH</label>
+            <input
+              id="month"
+              name="Month"
+              type="number"
+              placeholder="MM"
+              max="12"
+              min="1"
+              required
+            />
+            <span id="required-error2" class="error"
+              ><i> This field is required</i></span
+            >
+            <span class="valid-error"><i>Must be a valid month</i></span>
+          </div>
+          <div class="date">
+            <label for="year">YEAR</label>
+            <input
+              id="year"
+              name="Year"
+              type="number"
+              placeholder="YYYY"
+              min="1"
+              max="2022"
+              required
+            />
+            <span id="required-error3" class="error"
+              ><i>This field is required</i></span
+            >
+            <span id="yearError" class="valid-error"
+              ><i>Must be in the past</i></span
+            >
+            <span class="negativeYearError"><i>Must be a valid year</i></span>
+          </div>
+        </form>
+      </div>
+      <div id="icon">
+        <div class="devide"></div>
+        <img src="./assets/images/icon-arrow.svg" />
+      </div>
+      <div class="result">
+        <h2>
+          <i><span id="year-count">- -</span> years</i>
+        </h2>
+        <h2>
+          <i><span id="month-count">- -</span> months</i>
+        </h2>
+        <h2>
+          <i><span id="day-count">- -</span> days</i>
+        </h2>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* colors */
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+  /* fonts */
+  --Font-size: 3rem;
+  --Font-family: "Poppins";
+}
+
+body {
+  font-family: var(--Font-family);
+  font-size: var(--Font-size);
+  background-color: var(--Off-white);
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  letter-spacing: 1px;
+}
+#container {
+  background-color: var(--White);
+  width: 600px;
+  border-radius: 20px 30px 130px 20px;
+  padding: 40px;
+}
+h2 {
+  line-height: 1;
+}
+.date-of-birth {
+  font-size: 12px;
+}
+.date {
+  color: var(--Smokey-grey);
+  display: inline-block;
+  margin: 12px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input {
+  width: 100px;
+  height: 40px;
+  border-radius: 7px;
+  border-color: var(--Light-grey);
+  font-family: var(--Font-family);
+  font-size: 20px;
+  border-style: solid;
+  padding: 10px;
+}
+.error,
+.valid-error,
+.days-error,
+.negativeYearError {
+  display: none;
+  color: var(--Light-red);
+  font-size: 7px;
+  margin-top: 5px;
+}
+.blank-error {
+  border-color: var(--Light-red);
+}
+#icon {
+  display: grid;
+  place-items: end;
+}
+#icon > img {
+  background-color: var(--Purple);
+  border-radius: 50%;
+  padding: 17px;
+  width: 70px;
+  z-index: 2;
+}
+#icon > img:hover {
+  background-color: black;
+  cursor: pointer;
+}
+.devide {
+  border: 1px solid var(--Light-grey);
+  width: 100%;
+  position: relative;
+  top: 35px;
+  z-index: 1;
+}
+span {
+  color: var(--Purple);
+}
+
+@media (max-width: 650px) {
+  body {
+    font-size: 2rem;
+  }
+  #container {
+    width: 400px;
+    height: 400px;
+  }
+  .date {
+    margin: 3px;
+  }
+  input {
+    font-size: 16px;
+    width: 80px;
+  }
+  .error,
+  .valid-error,
+  .days-error {
+    font-size: 6px;
+  }
+  #icon {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #icon > img {
+    width: 50px;
+    padding: 10px;
+    transition: transform 1s ease;
+  }
+  .devide {
+    top: 25px;
+  }
+}
+@media (max-width: 450px) {
+  body {
+    font-size: 1.9rem;
+  }
+  #container {
+    padding: 30px;
+    width: 350px;
+    height: 410px;
+  }
+  #icon {
+    margin-top: 35px;
+    margin-bottom: 30px;
+  }
+  #icon > img {
+    transform: translateX(-230%);
+  }
+}
