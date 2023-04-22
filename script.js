@@ -54,11 +54,11 @@ function calculation() {
   var _days;
   
   if (Number(currentDay) == Number(dayInput.value)) _days = 0;
-  if (Number(currentMonth) == Number(monthInput.value) && Number(currentDay) >= Number(dayInput.value)) _months = 0;
+
 
   if (Number(currentMonth) <= Number(monthInput.value)) {
     _years--;
-    _months = 12 - Number(monthInput.value) + Number(currentMonth);
+    _months = 12 - Number(monthInput.value) + Number(currentMonth) - 1;
   } else if (Number(currentMonth) > Number(monthInput.value)) {
     _months = Number(currentMonth) - Number(monthInput.value);
   }
