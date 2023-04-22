@@ -134,7 +134,7 @@ span {
 }
 @media (max-width: 450px) {
   body {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
   }
   #container {
     padding: 30px;
