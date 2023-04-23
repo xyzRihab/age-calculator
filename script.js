@@ -52,18 +52,27 @@ function calculation() {
   var _years = Number(currentYear) - Number(yearInput.value);
   var _months;
   var _days;
-  
-  if (Number(currentDay) == Number(dayInput.value)) _days = 0;
 
-  if (Number(currentMonth) <= Number(monthInput.value)) {
+  if (Number(currentDay) == Number(dayInput.value)) _days = 0;
+  if (Number(currentMonth) == Number(monthInput.value)) {
+    if (Number(currentDay) < Number(dayInput.value)) {
+      _years--;
+    }
+    _months = 12 - Number(monthInput.value) + Number(currentMonth);
+    if(Number(currentDay) >= Number(dayInput.value)){
+      _months = 0;
+    }
+  }
+
+  if (Number(currentMonth) < Number(monthInput.value)) {
     _years--;
-    _months = 12 - Number(monthInput.value) + Number(currentMonth) - 1;
+    _months = 12 - Number(monthInput.value) + Number(currentMonth);
   } else if (Number(currentMonth) > Number(monthInput.value)) {
     _months = Number(currentMonth) - Number(monthInput.value);
   }
 
   if (Number(currentDay) < Number(dayInput.value)) {
-    if (Number(currentMonth) != Number(monthInput.value)) _months--;
+    if (_months != 0) _months--;
     _days = 30 - Number(dayInput.value) + Number(currentDay);
   } else if (Number(currentDay) > Number(dayInput.value)) {
     _days = Number(currentDay) - Number(dayInput.value);
@@ -72,7 +81,6 @@ function calculation() {
   dayCount.textContent = _days;
   monthCount.textContent = _months;
   yearCount.textContent = _years;
-
 }
 
 function blankError() {
@@ -173,17 +181,17 @@ function calculateAge() {
 
 icon.addEventListener("click", calculateAge);
 
-year.addEventListener("keypress", function(event) {
+year.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     calculateAge();
   }
 });
-month.addEventListener("keypress", function(event) {
+month.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     calculateAge();
   }
 });
-day.addEventListener("keypress", function(event) {
+day.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     calculateAge();
   }
